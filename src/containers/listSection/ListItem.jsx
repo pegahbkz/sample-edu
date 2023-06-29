@@ -7,11 +7,11 @@ export default function ListItem({term}) {
       <h4 className="font-light text-lg">{term.name ? term.name : 'نام درس'}</h4>
       <div className="flex">
         <Link to={term.name} >
-          <button className="px-5 py-2 rounded-md bg-blue-500 hover:bg-blue-600 hover:cursor-pointer text-white mx-1">
+          <button className="px-5 py-2 rounded-md bg-blue-600 hover:bg-blue-500 hover:cursor-pointer text-white mx-1">
             ویرایش
           </button>
         </Link>
-        <button className="px-5 py-2 rounded-md bg-red-500 hover:bg-red-400 hover:cursor-pointer text-white mx-1">
+        <button className="px-5 py-2 rounded-md bg-blue-400 hover:bg-blue-300 hover:cursor-pointer text-white mx-1">
           حذف
         </button>
       </div>
