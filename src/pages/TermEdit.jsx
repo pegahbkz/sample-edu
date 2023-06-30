@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom";
 import axios from 'axios'
 import Layout from "../containers/Layout";
 import DropDownForm from "../components/form/DropDownForm";
+import SubmitButton from "../components/form/SubmitButton";
 export default function TermEdit () {
 
     const {TermName}  = useParams();
@@ -32,7 +33,7 @@ export default function TermEdit () {
             </div>
             <div className = "w-4/12 mt-10 mb-5">
                 <p>لیست اساتید</p>
-                <div className="w-full flex items-center justify-between mt-5">
+                <div className="w-full flex items-center justify-between mt-2">
                     <div className="w-8/12">
                         <DropDownForm text="انتخاب استاد"/>
                     </div>
@@ -46,7 +47,7 @@ export default function TermEdit () {
             </div>
             <div className = "w-4/12 mt-10">
                 <p>لیست دانشجویان</p>
-                <div className="w-full flex items-center justify-between mt-5">
+                <div className="w-full flex items-center justify-between mt-2">
                     <div className="w-8/12">
                         <DropDownForm text="انتخاب دانشجو" />
                     </div>
@@ -57,6 +58,9 @@ export default function TermEdit () {
                         آپلود اکسل
                     </button>
                 </div>
+            </div>
+            <div className="w-4/12 mt-10">
+                <SubmitButton text="ذخیره تغییرات" />
             </div>
         </div>
       </Layout>

@@ -1,13 +1,13 @@
 import React from "react";
-import ListItem from "./ListItem";
+import UserItem from "./UserItem";
 
-export default function ListItems({terms}) {
+export default function UserItems({users}) {
   return (
     <div className="w-full p-10">
       <div className="w-full flex flex-wrap">
-        {terms.map((term , i)=>
+        {users.map((user , i)=>
 
-        <ListItem key={i} term={term}/>
+        <UserItem key={i} user={user}/>
         )}
 
       </div>
