@@ -4,12 +4,17 @@ import axios from 'axios'
 import Layout from "../containers/Layout";
 import DropDownForm from "../components/form/DropDownForm";
 import SubmitButton from "../components/form/SubmitButton";
+import AuthService from '../auth/useAuth'
+
 export default function TermEdit () {
+    const token = AuthService.getCurrentUser()
+    const headers = { 'test': token }
+    const userRole = AuthService.getRole()
 
     const {TermName}  = useParams();
 
     useEffect(()=>{
-        axios.get(`${process.env.REACT_APP_API_URL}/term/${TermName}`).then((res)=>{
+        axios.get(`${process.env.REACT_APP_API_URL}/term/${TermName}` ,  {headers}).then((res)=>{
             console.log(res.data[0].name);
         })
     } , [TermName])

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { withCookies, Cookies } from 'react-cookie';
+import jwt from 'jwt-decode'
 
 const API_URL = process.env.REACT_APP_API_URL;
 const cookies = new Cookies('auth');
@@ -28,10 +29,22 @@ const getCurrentUser = () => {
   return token;
 };
 
+const getRole = () => {
+  const token = cookies.get('auth')
+  const tokenDecoded = jwt(token);
+  var role = 'unknown'
+  if (tokenDecoded && tokenDecoded.role) {
+      role = tokenDecoded.role
+  } 
+
+  return role
+}
+
 const AuthService = {
   login,
   logout,
   getCurrentUser,
+  getRole
 };
 
 export default AuthService;
